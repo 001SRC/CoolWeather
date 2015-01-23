@@ -1,0 +1,26 @@
+
+// 省
+create table Province
+(
+id integer primary key autoincrement,
+province_name text,
+province_code text
+)
+
+// 市,province_id 为外键，关联 Province 表
+create table City
+(
+id integer primary key autoincrement,
+city_name text,
+city_code text,
+province_id integer
+)
+
+// 县（镇）,city_id 为外键，关联 City 表
+create table Country
+(
+id integer primary key autoincrement,
+country_name text,
+country_code text,
+city_id integer
+)
